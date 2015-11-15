@@ -4,40 +4,26 @@
   <title>Journal</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
 </head>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-    <div class="btn-group" uib-dropdown is-open="status.isopen">
-      <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
-        Button dropdown <span class="caret"></span>
-      </button>
-      <ul class="uib-dropdown-menu" role="menu" aria-labelledby="single-button">
-        <li role="menuitem"><a href="#">Action</a></li>
-        <li role="menuitem"><a href="#">Another action</a></li>
-        <li role="menuitem"><a href="#">Something else here</a></li>
-        <li class="divider"></li>
-        <li role="menuitem"><a href="#">Separated link</a></li>
-      </ul>
-    </div>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+    <nav class="navbar navbar-default">
+      <div ng-app="journal" class="container-fluid">
+        <div ng-controller="Pages" class="navbar-header">
+          <span dropdown on-toggle="toggled(open)">
+          <a class="navbar-brand" href id="simple-dropdown" dropdown-toggle>
+            <img alt="Journal">
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+            <li ng-repeat="choice in items">
+              <a href>{{choice}}</a>
+            </li>
+          </ul>
+        </span>
+        </div>
+      </div>
+    </nav>
 <body>
 
 <%= yield %>
