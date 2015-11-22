@@ -1,0 +1,20 @@
+<div class="header" id="newHeader">
+  <div class="container-fluid center-block">
+      <h2 class="text-center">Sign up to begin your adventure</h2>
+  </div>
+</div>
+<section id="formSection">
+  <div class="container-fluid" ng-controller="Signups">
+    <form novalidate class="form-inline">
+      <div class="form-group">
+        <label for="UserName">Name:</label>
+        <input type="text" class="form-control" id="UserName" ng-model="user.name" placeholder="UserName">
+      </div>
+      <div class="form-group">
+        <label for="UserEmail">E-mail:</label>
+        <input type="email" class="form-control" id="UserEmail" ng-model="user.email" placeholder="Email">
+      </div>
+       <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</section>
