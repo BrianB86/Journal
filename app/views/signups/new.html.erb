@@ -5,7 +5,7 @@
 </div>
 <section id="formSection">
   <div class="container-fluid" ng-controller="Signups">
-    <form novalidate class="form-inline">
+    <form novalidate class="form-inline" ng-submit="save(user.name,user.email)">
       <div class="form-group">
         <label for="UserName">Name:</label>
         <input type="text" class="form-control" id="UserName" ng-model="user.name" placeholder="UserName">
